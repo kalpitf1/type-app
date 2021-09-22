@@ -1,38 +1,97 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap');
+
+* {
+  box-sizing: inherit;
 }
 
-.App-logo {
-  height: 40vmin;
+.App {
+  text-align: center;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  background-color: #282c34;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  font-size: calc(10px + 2vmin);
+  color: white;
+  flex-shrink: 0;
+}
+
+.navbar__brand {
+  display: flex;
+  align-items: center;
+}
+
+.navbar__logo {
+  height: 40px;
   pointer-events: none;
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+  .navbar__logo {
+    animation: navbar__logo-spin infinite 20s linear;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
+@keyframes navbar__logo-spin {
   from {
     transform: rotate(0deg);
   }
   to {
     transform: rotate(360deg);
   }
+}
+
+.navbar__title {
+  font-family: "Courier Prime", sans-serif;
+  /* font-weight: 400; */
+  /* font-size: 16px; */
+  display: inline-block;
+  padding: 0px 20px;
+}
+
+.navbar__items li, a {
+  font-family: "Courier Prime", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  color: #f5f6f7;
+  text-decoration: none;
+}
+
+.navbar__items {
+  list-style: none;
+}
+
+.navbar__items li {
+  display: inline-block;
+  padding: 0px 20px;
+}
+
+.navbar__items li a, .footer a {
+  transition: all 0.3s ease 0s;
+}
+
+.navbar__items li a:hover, .footer a:hover {
+  color: rgb(8, 199, 162);
+}
+
+.main-wrapper {
+  flex-grow: 1;
+  padding: 20px;
+}
+
+.footer {
+  background-color: #282c34;
+  flex-shrink: 0;
+  padding: 20px;
+  color: white;
+}
+
+.footer a {
+  font-size: 12px;
 }

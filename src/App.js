@@ -3,21 +3,23 @@ import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+    <div class="App">
+      <header class="header">
+        <div class="navbar__brand">
+          <img class="navbar__logo" src={logo} alt="logo" />
+          <strong class="navbar__title"> Type App </strong>
+        </div>
+        <nav>
+          <ul class="navbar__items">
+            <li><a href="https://github.com/kalpitf1/type-app">Github</a></li>
+            {/* <li><a href="#">About</a></li> */}
+          </ul>
+        </nav>
       </header>
+      <div class="main-wrapper"> App content goes here </div>
+      <footer class="footer">
+        <a href="#"> Created by @ </a>
+      </footer>
     </div>
   );
 }
