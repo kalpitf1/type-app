@@ -1,18 +1,19 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import logo from './logo.svg';
 import './App.css';
 
-const state = { letter: '', nextLetter: '' }
 const letterArray = 'abcdefghijklmnopqrstuvwxyz'.split('')
 letterArray.push("DONE")
 
 function App() {
+  const [letter, setLetter] = React.useState('')
+  const [nextLetter, setNextLetter] = React.useState('a')
+
   function handleChange(event) {
-    setState({ letter: event.target.value })
+    setLetter(event.target.value)
     const idx = letterArray.findIndex(element => element === event.target.value)
     const next = letterArray[idx + 1]
-    setState({ nextLetter: next })
+    setNextLetter(next)
   }
 
   return (
@@ -31,10 +32,10 @@ function App() {
       </header>
       <div class="main-wrapper"> App content goes here
         <p>
-          You typed: {state.letter}
+          You typed: {letter}
         </p>
         <p>
-          What's next: {state.nextLetter}
+          What's next: {nextLetter}
         </p>
         <p>
           <input onChange={handleChange} />
@@ -46,16 +47,5 @@ function App() {
     </div>
   );
 }
-
-function setState(newState) {
-  Object.assign(state, newState)
-  renderApp()
-}
-
-function renderApp() {
-  ReactDOM.render(<App />, document.getElementById('root'))
-}
-
-renderApp()
 
 export default App;
