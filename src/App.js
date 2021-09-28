@@ -10,10 +10,13 @@ function App() {
   const [nextLetter, setNextLetter] = React.useState('a')
 
   function handleChange(event) {
-    setLetter(event.target.value)
-    const idx = letterArray.findIndex(element => element === event.target.value)
-    const next = letterArray[idx + 1]
-    setNextLetter(next)
+    if (event.target.value === nextLetter) {
+      setLetter(event.target.value)
+      const idx = letterArray.findIndex(element => element === event.target.value)
+      const next = letterArray[idx + 1]
+      setNextLetter(next)
+    }
+    document.getElementById("letterInput").value = ''
   }
 
   return (
@@ -38,7 +41,7 @@ function App() {
           What's next: {nextLetter}
         </p>
         <p>
-          <input onChange={handleChange} />
+          <input onChange={handleChange} id="letterInput" />
         </p>
       </div>
       <footer class="footer">
