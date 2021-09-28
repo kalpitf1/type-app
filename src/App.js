@@ -30,6 +30,13 @@ function App() {
     document.getElementById("letterInput").value = ''
   }
 
+  function resetApp(event) {
+    setLetter('')
+    setNextLetter('a')
+    totalTime = 0
+    prev = 0
+  }
+
   return (
     <div class="App">
       <header class="header">
@@ -55,6 +62,7 @@ function App() {
           <input onChange={handleChange} id="letterInput" />
         </p>
         <p>{totalTime ? `Total time ${(totalTime / 1000)} seconds` : 'Start typing'}</p>
+        <button onClick={resetApp}>Reset</button>
       </div>
       <footer class="footer">
         <a href="#"> Created by @ </a>
