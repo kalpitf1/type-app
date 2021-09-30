@@ -65,7 +65,7 @@ function App() {
         <button onClick={resetApp}>Reset</button>
       </div>
       <footer class="footer">
-        <a href="#"> Created by @ </a>
+        <a href="https://www.linkedin.com/in/kalpit-f/"> Created by Kalpit </a>
       </footer>
     </div>
   );
