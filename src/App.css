@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime&family=Montserrat&display=swap');
 
 * {
   box-sizing: inherit;
@@ -81,15 +81,45 @@
 }
 
 .main-wrapper {
+  background-color: #18191a;
   flex-grow: 1;
   padding: 20px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  font-size: 40px;
+  color: #f5f6f7;
+}
+
+.main-wrapper strong{
+  color: rgb(8, 199, 162);
+}
+
+.main-wrapper input {
+  background-color: #090a11;
+  height: 40px;
+  width: 50%;
+  border-radius: 10px;
+  border: none;
+  caret-color: #f5f6f7;
+}
+
+.main-wrapper input:focus{
+  outline: 2px solid rgb(8, 199, 162);
+}
+
+.main-wrapper button {
+  background-color: #444950;
+  padding: 20px 40px;
+  font-size: 20px;
+  color: #f5f6f7;
+  border-radius: 10px;
 }
 
 .footer {
   background-color: #282c34;
   flex-shrink: 0;
   padding: 20px;
-  color: white;
+  color: #f5f6f7;
 }
 
 .footer a {

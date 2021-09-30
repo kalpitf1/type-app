@@ -10,12 +10,12 @@ var totalTime = 0
 var prev = 0
 
 function App() {
-  const [letter, setLetter] = React.useState('')
+  // const [letter, setLetter] = React.useState('')
   const [nextLetter, setNextLetter] = React.useState('a')
 
   function handleChange(event) {
     if (event.target.value === nextLetter) {
-      setLetter(event.target.value)
+      // setLetter(event.target.value)
       const idx = letterArray.findIndex(element => element === event.target.value)
       const next = letterArray[idx + 1]
       setNextLetter(next)
@@ -31,7 +31,7 @@ function App() {
   }
 
   function resetApp(event) {
-    setLetter('')
+    // setLetter('')
     setNextLetter('a')
     totalTime = 0
     prev = 0
@@ -52,11 +52,11 @@ function App() {
         </nav>
       </header>
       <div class="main-wrapper">
-        <p>
+        {/* <p>
           You typed: <strong> {letter} </strong>
-        </p>
-        <p>
-          What's next: <strong> {nextLetter} </strong>
+        </p> */}
+        <p>{nextLetter.length === 1 ? `What's next: ` : ''}
+          <strong> {nextLetter} </strong>
         </p>
         <p>
           <input onChange={handleChange} id="letterInput" />
