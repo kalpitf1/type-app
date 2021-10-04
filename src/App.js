@@ -41,7 +41,7 @@ function App() {
     <div class="App">
       <header class="header">
         <div class="navbar__brand">
-          <img class="navbar__logo" src={logo} alt="logo" />
+          <img class="navbar__logo" width="57" height="40" src={logo} alt="logo" />
           <strong class="navbar__title"> Type App </strong>
         </div>
         <nav>
@@ -55,9 +55,11 @@ function App() {
         {/* <p>
           You typed: <strong> {letter} </strong>
         </p> */}
-        <p>{nextLetter.length === 1 ? `What's next: ` : ''}
-          <strong> {nextLetter} </strong>
-        </p>
+        <label for="letterInput">
+          <p>{nextLetter.length === 1 ? `What's next: ` : ''}
+            <strong> {nextLetter} </strong>
+          </p>
+        </label>
         <p>
           <input onChange={handleChange} id="letterInput" />
         </p>
