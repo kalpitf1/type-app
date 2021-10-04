@@ -14,6 +14,7 @@ function App() {
   const [nextLetter, setNextLetter] = React.useState('a')
 
   function handleChange(event) {
+    event.target.value = event.target.value.toLowerCase()
     if (event.target.value === nextLetter) {
       // setLetter(event.target.value)
       const idx = letterArray.findIndex(element => element === event.target.value)
