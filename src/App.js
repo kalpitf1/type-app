@@ -20,6 +20,14 @@ function App() {
       const next = letterArray[idx + 1]
       setNextLetter(next)
     }
+    timer(event)
+    document.getElementById("letterInput").value = ''
+  }
+
+  function timer(event) {
+    if (nextLetter === 'a' && event.target.value !== 'a') { // ignore all keys before 'a' for timer calculation
+      return
+    }
     if (event.target.value === 'a') { // start timer when 'a' is pressed
       prev = Date.now()
     } else {  // add time b/w each keypress to timer
@@ -27,7 +35,6 @@ function App() {
       totalTime += elapsedTime  // increment total time
       prev = Date.now()  // update previous keypress time
     }
-    document.getElementById("letterInput").value = ''
   }
 
   function resetApp(event) {
