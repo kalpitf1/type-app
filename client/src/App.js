@@ -2,6 +2,8 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 
+import Create from "./components/create";
+
 const letterArray = 'abcdefghijklmnopqrstuvwxyz'.split('')
 letterArray.push("DONE")
 
@@ -73,6 +75,9 @@ function App() {
         </p>
         <p>{totalTime ? `Total time ${(totalTime / 1000)} seconds` : 'Start typing'}</p>
         <button onClick={resetApp}>Reset</button>
+        <p>
+          <Create time={(totalTime / 1000)} />
+        </p>
       </div>
       <footer class="footer">
         <a href="https://www.linkedin.com/in/kalpit-f/"> Created by Kalpit </a>
