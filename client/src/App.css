@@ -95,10 +95,12 @@
 
 .main-wrapper input {
   background-color: #090a11;
-  height: 40px;
+  height: 60px;
   width: 50%;
   border-radius: 10px;
   border: none;
+  font-size: 30px;
+  color: #f5f6f7;
   caret-color: #f5f6f7;
 }
 

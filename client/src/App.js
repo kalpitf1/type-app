@@ -12,19 +12,17 @@ var totalTime = 0
 var prev = 0
 
 function App() {
-  // const [letter, setLetter] = React.useState('')
   const [nextLetter, setNextLetter] = React.useState('a')
 
   function handleChange(event) {
     event.target.value = event.target.value.toLowerCase()
-    if (event.target.value === nextLetter) {
-      // setLetter(event.target.value)
-      const idx = letterArray.findIndex(element => element === event.target.value)
+    let currChar = event.target.value.at(-1)
+    if (currChar === nextLetter) {
+      const idx = letterArray.findIndex(element => element === currChar)
       const next = letterArray[idx + 1]
       setNextLetter(next)
     }
     timer(event)
-    document.getElementById("letterInput").value = ''
   }
 
   function timer(event) {
@@ -41,7 +39,7 @@ function App() {
   }
 
   function resetApp(event) {
-    // setLetter('')
+    document.getElementById("letterInput").value = ''
     setNextLetter('a')
     totalTime = 0
     prev = 0
@@ -62,9 +60,6 @@ function App() {
         </nav>
       </header>
       <div class="main-wrapper">
-        {/* <p>
-          You typed: <strong> {letter} </strong>
-        </p> */}
         <label for="letterInput">
           <p>{nextLetter.length === 1 ? `What's next: ` : ''}
             <strong> {nextLetter} </strong>
