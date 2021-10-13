@@ -46,21 +46,26 @@ export default class Create extends Component {
 
     // This following section will display the form that takes the input from the user.
     render() {
+        const gameEnded = this.props.gameEnded
         return (
             <div>
-                <form onSubmit={this.onSubmit}>
-                    <div>
-                        <label for="username">Name for leaderboard: </label>
-                        <p>
-                            <input
-                                type="text"
-                                id="username"
-                                value={this.state.person_name}
-                                onChange={this.onChangePersonName}
-                            />
-                        </p>
-                    </div>
-                </form>
+                {/* true && expression is expression, false && expression is false
+                Ref: https://reactjs.org/docs/conditional-rendering.html#inline-if-with-logical--operator */}
+                {gameEnded === 1 &&
+                    <form onSubmit={this.onSubmit}>
+                        <div>
+                            <label for="username">Name for leaderboard: </label>
+                            <p>
+                                <input
+                                    type="text"
+                                    id="username"
+                                    value={this.state.person_name}
+                                    onChange={this.onChangePersonName}
+                                />
+                            </p>
+                        </div>
+                    </form>
+                }
             </div>
         );
     }
