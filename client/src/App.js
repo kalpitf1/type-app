@@ -71,7 +71,7 @@ function App() {
         <p>{totalTime ? `Total time ${(totalTime / 1000)} seconds` : 'Start typing'}</p>
         <button onClick={resetApp}>Reset</button>
         <p>
-          <Create time={(totalTime / 1000)} gameEnded={nextLetter === "DONE" ? 1 : 0} />
+          <Create time={(totalTime / 1000)} gameEnded={nextLetter === "DONE" ? 1 : 0} parentCallback={resetApp} />
         </p>
       </div>
       <footer class="footer">

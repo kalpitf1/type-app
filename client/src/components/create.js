@@ -25,6 +25,7 @@ export default class Create extends Component {
 
     // This function will handle the submission.
     onSubmit(e) {
+        alert('A name was submitted: ' + this.state.person_name);
         e.preventDefault();
 
         // When post request is sent to the create url, axios will add a new record(newperson) to the database.
@@ -42,6 +43,8 @@ export default class Create extends Component {
             person_name: "",
             person_score: "",
         });
+
+        this.props.parentCallback()   // parent callback to prevent multiple form submissions
     }
 
     // This following section will display the form that takes the input from the user.
