@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
 import Create from "./components/create";
+import Leaderboard from './components/leaderboard';
 
 const letterArray = 'abcdefghijklmnopqrstuvwxyz'.split('')
 letterArray.push("DONE")
@@ -12,7 +13,7 @@ var totalTime = 0
 var prev = 0
 
 function App() {
-  const [nextLetter, setNextLetter] = React.useState('a')
+  const [nextLetter, setNextLetter] = useState('a')
 
   function handleChange(event) {
     event.target.value = event.target.value.toLowerCase()
@@ -72,6 +73,9 @@ function App() {
         <button onClick={resetApp}>Reset</button>
         <p>
           <Create time={(totalTime / 1000)} gameEnded={nextLetter === "DONE" ? 1 : 0} parentCallback={resetApp} />
+        </p>
+        <p>
+          <Leaderboard />
         </p>
       </div>
       <footer class="footer">
