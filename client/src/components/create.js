@@ -64,6 +64,7 @@ export default class Create extends Component {
                                     id="username"
                                     value={this.state.person_name}
                                     onChange={this.onChangePersonName}
+                                    autocomplete="off"
                                 />
                             </p>
                         </div>

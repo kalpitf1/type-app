@@ -67,7 +67,7 @@ function App() {
           </p>
         </label>
         <p>
-          <input onChange={handleChange} id="letterInput" />
+          <input onChange={handleChange} id="letterInput" autocomplete="off" />
         </p>
         <p>{totalTime ? `Total time ${(totalTime / 1000)} seconds` : 'Start typing'}</p>
         <button onClick={resetApp}>Reset</button>
