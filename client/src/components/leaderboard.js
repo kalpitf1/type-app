@@ -6,7 +6,7 @@ const Leaderboard = (props) => {
 
     useEffect(() => {
         axios
-            .get("http://localhost:5000/record/")
+            .get("https://type-app-1.herokuapp.com/record/")
             .then((response) => {
                 setRecord(response.data)
             })
